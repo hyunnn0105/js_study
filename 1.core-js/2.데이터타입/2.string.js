@@ -25,3 +25,17 @@ console.log(str5);
 
 var str6 = 'dog\t\t\tcat';
 console.log(str6);
+
+var ex1='100'; //string
+
+'\n' //문자
+
+//템플릿 리터럴 (ex6+ 문법)
+var templat =`
+<ul>`
+
+//학생이름하고 영어점수를  같이 출력하고싶은데 학생이 여러명일 경우
+var studentName = 'park'
+var engScore = 94;
+
+console.log(stusent+'print'+eng+'점입니다');
