@@ -1,6 +1,7 @@
 var num1 = +prompt('정수1');
 var num2 = +prompt('정수2');
 
+
 if (num1 >= 0 && num2 >= 0) {
     else if (num1>num2){
         alert(`두 값의 차이는${num1-num2}`);
@@ -19,7 +20,20 @@ else if (num1 <= 0 && num2 <= 0){
     var min = ()
     alert(`두 값의 차이는${num2-(num1*-1)}`)
 }
+/*
+#빼주기
+1.
+var diff = a - b;
+if (a < b)
+    diff = -diff
 
+alert(`두 값의 차이는 ${diff}입니다.`);
+
+
+2.
+var diff = a > b ? a-b : b - a;
+alert(`두 값의 차이는 ${diff}입니다.`);
+*/
 
 
 
