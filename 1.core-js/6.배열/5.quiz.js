@@ -47,10 +47,10 @@
 var numbers = [];
 
 while (true) {
-    var n = prompt('숫자를 입력하세요.\n그만 두려면 \'그만\'이라고 입력하세요.');
-    if (n === '그만') break;
+    var i = prompt('숫자를 입력하세요.\n그만 두려면 \'그만\'이라고 입력하세요.');
+    if (i === '그만') break;
 
-    numbers.push(+n);
+    numbers.push(+i);
 }
 
 //총합 계산
