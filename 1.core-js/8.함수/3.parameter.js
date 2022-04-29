@@ -37,7 +37,7 @@ console.log(`result2: ${clacRangeTotal(3,7)}`);
 var r2 = clacRangeTotal();
 console.log(`r2 : ${r2}`);
 
-//매개변수가 없는 함수
+//매개변수가 없는 함수 in (X) out (X) ->return (X) 매개변수에 인해 내부의 실행내역을 바꿀 수 없음
 function rdd() {
     console.log(`링딩동동동`);
 }
@@ -71,3 +71,14 @@ console.log(`========================================================`);
 sayHello('한국어')
 sayHello('영어')
 sayHello('중국어')
+
+//매개변수가 없는 함수
+function selectRandomPet() {
+    var pets = ['멍멍이', '야옹이', '짹짹이', '어흥이', '두껍이'];
+    // 0 ~ 4까지의 랜덤정수
+    var rn = Math.floor(Math.random() * pets.length);
+    return pets[rn];
+
+}
+
+console.log(`선택된 동물 : ${selectRandomPet()}`);

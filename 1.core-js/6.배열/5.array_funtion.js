@@ -46,14 +46,14 @@ console.log(`사본:[${numbers2}]`);
 */
 console.log(`============================================`);
 
-var nums = [10, 20, 30, 40, 50];
+var arr = [10, 20, 30, 40, 50];
 
 //reverse(): 베열을 역순으로 재배치, 원본이 변화함
 
-var numsCopy = nums.slice();
+var numsCopy = arr.slice();
 numsCopy.reverse();
 
-console.log(nums);
+console.log(arr);
 console.log(numsCopy);
 
 // concat() : 배열 2개를 결합한 사본을 가져옴
