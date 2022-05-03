@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="fruits">
+        <li>사과</li>
+        <li>딸기</li>
+        <li>자몽</li>
+        <li>라임</li>
+        <li>레몬</li>
+        <li>바나나</li>
+    </ul>
+
+    <script>
+        const $fruits = document.getElementById('fruits');
+        const $mango = $fruits.firstElementChild.cloneNode();
+        $mango.textContent = '망고'
+
+        //노드교체 (사과->망고) - 부모한테 부탁, (바꿀거, 원래있던거)
+        $fruits.replaceChild($mango, $fruits.firstElementChild);
+
+        //노드삭제
+        $fruits.removeChild($fruits.lastElementChild);
+
+        //노드전체삭제함수
+        //($parentNode - 삭제될 자식들의 부모
+        //유사배열문제점 - index위치가 변화함
+        function removeAllChild ($parentNode) {
+
+            // for ( let $li of $fruits.children ){
+            //     $fruits.removeChild($fruits.firstElementChild);
+            //     //$fruits.innerHTML = '';
+            // }
+
+            // for (let i = $parentNode.children.length-1; i >= 0; i--) {
+            //     $parentNode.removeChild($parentNode.children[i]);
+            // }
+
+
+           // 자식노드탐색이랑 유사함
+           //p노드에 자식이 있는 동안에 / 첫째를 제거  - 자식이 없어질때까지
+            while (!!$parentNode.children.length) {
+                $parentNode.removeChild($parentNode.firstElementChild)
+            }
+        }
+
+
+        removeAllChild($fruits)
+    </script>
+</body>
+</html>

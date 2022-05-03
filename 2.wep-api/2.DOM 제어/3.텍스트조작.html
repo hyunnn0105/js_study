@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            #greet span{
+        color:red;
+    }
+    </style>
+
+
+</head>
+<body>
+    <div id="greet">
+        Hello<span>Javascript!</span>
+    </div>
+
+    <script>
+        const $greet = document.getElementById('greet');
+
+        const text = $greet.textContent.trim();
+        console.log(text);
+
+        //trim 문자열앞뒤공백제거
+        // const text = $greet.textContent
+        $greet.firstElementChild = 'Hello Js!'
+
+        $greet.innerHTML = '안녕<span>JS!</span>'
+    </script>
+</body>
+</html>

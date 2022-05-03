@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="fruits">
+        <li>사과</li>
+    </ul>
+
+    <script>
+        //innerhtml = 'string' !!! - 데이터타입 중요
+        const $fruits = document.getElementById('fruits')
+        console.log($fruits.innerHTML);
+
+        //ul 내부의 태그가 수정됨
+        $fruits.innerHTML = '<li class="grape">포도<li>';
+        
+        //자식태그 추가
+        $fruits.innerHTML += '<li class="orange">오렌지<li>'; //문자열 더해주기
+    
+        // 자식태그 전체삭제
+        //$fruits.innerHTML = '';
+    </script>
+</body>
+</html>

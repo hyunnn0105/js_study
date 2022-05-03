@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="fruits">
+        <li class="apple">사과</li>
+        <li class="banana">바나나</li>
+        <li class="grape">포도</li>
+        <li class="mango">망고</li>
+    </ul>
+
+    <script>
+
+        //배열 디스트럭처링(구조분해 할당 ES6+) - 배열을 변수로 분해
+        const foods = ['라면', '오렌지', '치킨'];
+        const[ramen, orange, chicken] = foods; // 둘이 갯수 맞춰주기
+        console.log(chicken);
+
+        const $fruits = document.getElementById('fruits');
+        const [$apple, $banana, $grape, $mango] = fruits.children; //fru는 object 객체 ch-유사배열
+
+        //노드이동
+        //%banana 위치에 화면에 나타나면 위치 이동, 없으면 삽입
+        //노드 이동 - 바나나가 망고 앞으로 이동
+        $fruits.insertBefore($banana, $mango)
+        //맨 끝으로 이동
+        $fruits.appendChild($grape);
+
+        console.log($fruits.children);
+
+        /*
+        const ramen = foods[0];
+        const orange = foods[1];
+        const chicken = foods[2];
+        */
+        
+
+
+    </script>
+</body>
+</html>
