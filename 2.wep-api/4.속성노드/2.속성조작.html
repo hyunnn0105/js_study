@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="email" id="account" value="abc@def.com">
+
+
+    <script>
+
+        const $input = document.querySelector('input');
+
+        const usserName = $input.attributes.value.value;
+        const userName = $input.getAttribute('value');
+        console.log(userName);
+
+
+        //id값 참조
+        const inputId = $input.getAttribute('id');
+        console.log(inputId);
+
+
+        //속성값 변경
+        //value 속성의 값을 홍길동 -> 박영희
+        $input.attributes.value.value 
+        $input.setAttribute('value', '박영희');
+
+        // id속성값을 user-name -> member-name
+        $input.setAttribute('id', 'member-name');
+
+        // 속성값 추가
+        $input.setAttribute('title', '이름입니다.');
+        $input.setAttribute('placeholder', '이름은 한글로 쓰세요');
+
+
+        //속성값 제거
+        // $input.attributes.value.value = '';
+        $input.removeAttribute('value')
+
+        //속성존재유무확인
+        const logical = $input.hasAttribute('.class')
+        console.log(logical);
+        
+        //document.documentElement.dataset.dark = 'true' - 네이버 다크모드
+        
+</script>
+</body>
+</html>

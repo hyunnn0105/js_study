@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: orange;
+            margin: 20px;
+        }
+        .box.red{
+            background: red;
+        }
+        .box.green {
+            background: yellowgreen;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box" onclick="sayHello()"></div>
+    <div class="box red" onclick="grow()"></div>
+    <div class="box green" onclick="showText()"></div>
+
+    
+    <script>
+        //#이벤트 핸들러 함수 정의
+        //특정 이벤트가 발생했을 때 브라우저가 대신 호출할 함수
+        function sayHello () {
+            alert('메롱~~');
+        }
+        function grow () {
+            const $box = document.querySelector('.red');
+            $box.style.width = '200px'
+        }
+        const showText = function () {
+            const $greenbox = document.querySelector('.green');
+            $greenbox.textContent = '안녕';
+            }
+            
+        //green박스클릭했을때 박스 정중앙에 안녕
+        //텍스트가 등장하는 이벤트 핸들러 함수 정의
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <button id="hidir">텍스트 숨기기!!</button>
+    <div class="text">안녕하세요~~</div>
+
+    <script>
+
+        const $hidir = document.getElementById('hidir');
+        
+
+        //1.버튼에 클릭이벤트 등록
+        // ->클릭이벤트에 div를 숨길 수 있는 장치필요
+        //->숨긴이후 text 바뀜
+        //만약 div가 숨어있다면 다시 눌렀을때 나오기
+        //버튼 텍스트도 등장
+
+        function name () {
+            const $text = document.querySelector('.text');
+
+            if($text.classList.contains('hide')) {
+                text.classList.remove('hide');
+                $btn.textContent = '텍스트 숨기기!';
+            } else {
+                $text.classList.add('hide');
+                $btn.textContent = '텍스트 보이기!';
+            }
+        };
+
+        // $hidir.addEventListener('click', function(){
+        //     $text.style.display = 'block';
+        // });
+
+    </script>
+
+
+</body>
+</html>

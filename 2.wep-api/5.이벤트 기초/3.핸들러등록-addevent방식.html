@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">클릭하세요!</button>
+
+    <script>
+        const $btn = document.getElementById('btn');
+
+        //이벤트 핸들러
+        //하나 - 프로퍼티 / 여러개 - 리스너
+        function sayHello () {
+            alert('안녕하세요!');
+        }
+
+        //callback
+        $btn.addEventListener('click', sayHello);
+
+        //함수리터럴 - function(){}
+        $btn.addEventListener('mouseenter', function(){
+            $btn.style.background = 'aqua';
+        });
+
+        //sayH 다음에 fun 클릭함
+        $btn.addEventListener('click', function () {
+            $btn.style.color = 'red'
+        });
+
+        //이벤트 핸들러 제거 - 단점)이름없는 함수 제거 불가능
+        $btn.removeEventListener('click', sayHello);
+    </script>
+
+
+</body>
+</html>

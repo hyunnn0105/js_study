@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="email" id="account" value="abc@def.com">
+
+    <script>
+        //email까지 들어가기
+        const $input = document.querySelector('input');
+        console.log($input.attributes);
+        console.log($input.attributes.type);
+        console.log($input.attributes.type.value); //email값 얻음
+
+        // $input.attributes.type.value = 'checkbox'; //-type 변경 가능
+
+        $input.attributes.id.value = 'acc';
+        console.log($input.attributes.value.value); // value 접근
+
+        const $idInput = dc.querySelector('#id');
+        $idInput.attributes.placeholder
+    </script>
+    
+</body>
+</html>
