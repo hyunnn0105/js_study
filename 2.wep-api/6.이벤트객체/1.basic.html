@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <P>아무 곳이나 클릭하세요!</P>
+    <em class="msg"></em>
+
+    <script>
+        //브라우저 전체 클릭이벤트
+        //함수의 매게변수 자리에() 뭐 넣어주면 브라우저에 들어감
+        //ㄴ이벤트가 발생한 곳을 표시해줌
+
+        //1.이벤트 핸들러 함수에 객체를 넣어주면 이벤트 발생현황을 볼 수 있음
+        document.addEventListener('click', function(hello){
+            console.log('클릭이벤트 발생');
+            console.log(hello.x); //hello는 객체
+            console.log(hello.y);
+        
+            const $msg = document.querySelector('msg');
+            $msg.textContent = `x: ${hello.x}, y: ${hello.y}`;
+
+        });
+
+    </script>
+
+</body>
+</html>

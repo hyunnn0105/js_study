@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    .msg {
+        margin-top: 20px;
+        padding: 5px;
+        width: 150px;
+        border-bottom: 1px solid orange;        
+    }
+    </style>
+</head>
+<body>
+    
+    <input type="text" id="text-input">
+    <p class="msg"></p>
+
+    <script>
+        const $txtInput = document.getElementById('text-input');
+
+        //키보드 입력 화면에 띄우기 엔터사용해서 
+        //e = event
+        $txtInput.addEventListener('keyup', function (e) {
+            // console.log('키보드 이벤트 발생!');
+            // console.log(e);
+
+            const $msg  = document.querySelector('.msg');
+
+            if (e.key === 'Enter') {
+                //console.log('엔터눌렀넹');
+
+                //입력받은 값을 아래로 이동하고 입력창을 빈칸으로 만듦
+                $msg.textContent = $txtInput.value;
+                $txtInput.value = '';
+            }
+        });
+
+
+    </script>
+</body>
+</html>
