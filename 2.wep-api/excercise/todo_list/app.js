@@ -54,7 +54,7 @@ function makeNewId () {
     //     return todos[todos.length-1].id + 1; 
     // }
     //리팩토링~
-    return todos.length > 0 ? todos[todos.length-1].id + 1 : 1; 
+    return makeDDay.length > 0 ? makeDDay[makeDDay.length-1].id + 1 : 1; 
 
 }
 
@@ -62,7 +62,7 @@ function makeNewId () {
 //할 일 추가 기능의 정의
 //이걸 배열에 넣고 태그?
 //배열에서 탐색
-const todos  = [
+const makeDDay  = [
     {
         id : 1,
         text : '할 일 1',
@@ -85,6 +85,7 @@ function renderNewToDo(newToDo) {
     //innerhtml로 만들기
     //li태그 생성
     const $newLi = document.createElement('li');
+    //데이터 관리를 위한거라 안보여도 노상관
     $newLi.dataset.id = newToDo.id;
     $newLi.classList.add('todo-list-item');
 
@@ -105,6 +106,8 @@ function renderNewToDo(newToDo) {
     $todoList.appendChild($newLi);
 }
 
+
+
 function insertToDo() {
     //1. 할일 데이터 객체 생성
     const $todoText = document.getElementById('todo-text');
@@ -117,8 +120,8 @@ function insertToDo() {
     //console.log(newToDo);
 
     //2.생성한객체를 '배열'에 추가 -> 노드-appendchild/class-classList
-    todos.push(newToDo);
-    console.log(todos);
+    makeDDay.push(newToDo);
+    console.log(makeDDay);
 
     //3.화면에 렌더링
     renderNewToDo(newToDo);
@@ -130,11 +133,11 @@ function insertToDo() {
 // data-id가 주어지면 해당 id와 일치하는 객체의 인덱스를 리턴
 function findIndexById(dataId) {
     
-    for (let i = 0; i < todos.length; i++) {
+    for (let i = 0; i < makeDDay.length; i++) {
         // console.log(`todos[i].id: ${typeof todos[i].id}`);
         // console.log(`dataId: ${typeof dataId}`);
         // console.log('=======================');
-        if (+dataId === todos[i].id) {
+        if (+dataId === makeDDay[i].id) {
             return i;
         }
     }
@@ -195,8 +198,8 @@ function changeCheckState($checkbox) {
    const dataId = $label.parentElement.dataset.id;
    //console.log(dataId);
    const idx = findIndexById(dataId);
-   todos[idx].done = !todos[idx].done;
-   console.log(todos[idx]);
+   makeDDay[idx].done = !makeDDay[idx].done;
+   console.log(makeDDay[idx]);
 }
 
 function removeToDO($targetLi){
@@ -205,10 +208,10 @@ function removeToDO($targetLi){
     $todoList.removeChild($targetLi);
     
     // 2. 데이터 처리 : 배열에서 제거된 li에 매칭되는 객체삭제
-    console.log(todos);
+    console.log(makeDDay);
 
     const delIndex = findIndexById($targetLi.dataset.id);
-    todos.splice(delIndex, 1);
+    makeDDay.splice(delIndex, 1);
 }
 
 function enterModifyMode($modSpan) {
@@ -253,8 +256,8 @@ function ModifyTodo($modSpan) {
 
     //데이터 변동 처리
     const idx = findIndexById($label.parentElement.dataset.id);
-    todos[idx].text = $textSpan.textContent;
-    console.log(todos);
+    makeDDay[idx].text = $textSpan.textContent;
+    console.log(makeDDay);
 }
 
 //할일 추가시 input검증
