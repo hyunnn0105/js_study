@@ -12,12 +12,15 @@ input, button {
 /* body css ==================================================== */
 
 body {
-    background: lightyellow;
+    /* background: lightyellow; */
 }
 
 #wrapper {
     background: lightpink;
-    width: 80%;
+    border: 1px solid rgb(115, 115, 115);
+    box-shadow: 5px 5px 20px 5px rgba(214, 214, 214, 0.603);
+    border-radius: 50px;
+    width: 1200px;
     height: 800px;
     padding-bottom: 30px;
     
@@ -25,6 +28,7 @@ body {
 
     margin: 40px auto;
     box-sizing: border-box;
+    position: relative;
 }
 #innerWrapper {
     height: auto;
@@ -37,14 +41,21 @@ body {
 #wrapper header {
     width: 100%;
     height: 50px;
-    background: gray;
+    /* background: gray; */
     padding: 10px;
     box-sizing: border-box;
+    position: relative;
+
 }
 #wrapper header h1 {
     font-size: 28px;
     font-weight: 700;
     text-align: center;
+}
+#wrapper header .lnr {
+    background: red;
+    display: flex;
+    position: absolute;
 }
 
 /* main section css =================================================== */
@@ -62,11 +73,11 @@ body {
     position: relative;
 }
 
-.main .time .clock {
-    width: 25%;
-    
+.main .time .firstclock {
+    width: 300px;    
     justify-content: space-between;
-    background: rgb(152, 152, 152);
+    background: rgb(152, 152, 152); 
+    
 }
 
 .main .time .calender {
@@ -95,6 +106,77 @@ body {
     height: 320px;
 }
 
+/* d-day 출력창 css */
+
+* {
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.d-day-container {
+    height: 320px;
+    width: 100%;
+    background: white;
+    border: 3px solid #000;
+    overflow: auto;
+}
+
+.d-day-container .container {
+    display: flex;
+    border-bottom: 2px solid black;
+    /* background: orange; */
+}
+
+/* d-day */
+.d-day-container #remain-time {
+    text-align: center;
+    /* background: tomato; */
+    display: flex;
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid gray;
+}
+
+/* 타이틀 */
+#dday-title {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid gray;
+}
+
+/* end date */
+.d-day-container .d-day {
+    width: 170px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid gray;
+    /* background: orange; */
+    text-align: center;
+}
+
+/* 삭제 영역 */
+.d-day-container .remove {
+    width: 100px;
+    height: 30px;
+    font-size: 30px;   
+    position: relative;
+}
+
+.d-day-container .remove .lnr {
+    
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* background: orange; */
+}
+
 
 /* footer ================================== */
 #wrapper footer {
@@ -112,3 +194,5 @@ footer .bottom {
 .bottom h2{
     display: inline;
 }
+
+
