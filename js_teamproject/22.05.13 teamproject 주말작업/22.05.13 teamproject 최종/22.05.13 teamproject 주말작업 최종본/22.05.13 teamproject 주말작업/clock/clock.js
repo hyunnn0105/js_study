@@ -33,17 +33,30 @@ function clock() {
      let minuteAngleValue = `rotate(${minuteAngle}deg)`
 
      let hour = currentTime.getHours();
-     //          (논리형 조건식) ? 참일경우실행할코드 : 거짓일경우실행할코드;
+     // (논리형 조건식) ? 참일경우실행할코드 : 거짓일경우실행할코드;
      let hourAngle = (hour > 12 ? (hour - 12) * 30 : hour * 30) + (30 / 60) * minute;
      let hourAngleValue = `rotate(${hourAngle}deg)`
 
      secondPointer.style.transform = secondAngleValue;
      minutePointer.style.transform = minuteAngleValue;
      hourPointer.style.transform = hourAngleValue;
+     
      /*
      digitalClock.innerText = 
      `${hour < 10 ? `오전 0${hour}`: `${hour > 12 ?`오후 0${hour - 12}` : `오전 ${hour}`}`}:${minute < 10 ? `0${minute}` : `${minute}`}:${second < 10 ? `0${second}` : `${second}`}`;
      */
+
+     // 오전 오후 계산
+     const amPm = hour < 12 ? '오전' : '오후';
+     // '0' + minute : 숫자가 3분 이렇게 출력되면 '03분' 이렇게 출력
+     minute = minute < 10 ? '0' + minute : minute;
+     // '0' + second : 한자리 숫자 앞에 0을 더해줌
+     second = second < 10 ? '0' + second : second;
+     // 아 총시간 24시라서 24시 넘어가면 12빼줌 
+     hour = hour > 12 ? hour - 12 : hour;
+
+     digitalClock.textContent = `${amPm} ${hour}시 ${minute}분 ${second}초`;
+
 
      if (hour < 10) {
           if (minute > 9) {
@@ -73,7 +86,37 @@ function clock() {
                     digitalClock.innerText = `오전 ${hour}시0${minute}분0${second}초`;
                }
           }
-     } else
+     } else if (hour === 12) {
+          if (minute > 9) {
+               if (second > 9) {
+                    digitalClock.innerText = `오후 ${hour}시${minute}분${second}초`;
+               } else if (second < 10) {
+                    digitalClock.innerText = `오후 ${hour}시${minute}분0${second}초`;
+               }
+          } else if (minute < 10) {
+               if (second > 9) {
+                    digitalClock.innerText = `오후 ${hour}시0${minute}분${second}초`;
+               } else if (second < 10) {
+                    digitalClock.innerText = `오후 ${hour}시0${minute}분0${second}초`;
+               }
+          }
+     } 
+     // else if (hour === 24) {
+     //      if (minute > 9) {
+     //           if (second > 9) {
+     //                digitalClock.innerText = `오전 ${hour-12}시${minute}분${second}초`;
+     //           } else if (second < 10) {
+     //                digitalClock.innerText = `오전 ${hour-12}시${minute}분0${second}초`;
+     //           }
+     //      } else if (minute < 10) {
+     //           if (second > 9) {
+     //                digitalClock.innerText = `오전 ${hour-12}시0${minute}분${second}초`;
+     //           } else if (second < 10) {
+     //                digitalClock.innerText = `오전 ${hour-12}시0${minute}분0${second}초`;
+     //           }
+     //      }
+     // }
+      else if (hour>12 && hour<24)
      if (minute > 9) {
           if (second > 9) {
                digitalClock.innerText = `오후 ${hour-12}시${minute}분${second}초`;

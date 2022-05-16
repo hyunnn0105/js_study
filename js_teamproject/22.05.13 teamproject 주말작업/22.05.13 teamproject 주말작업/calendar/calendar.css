@@ -24,12 +24,15 @@
     align-items: center;
 
     color: #fff;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 700;
     /* margin-top: 20px;     */
     /* border-bottom: 2px solid black; */
     padding: 40px 0 50px;
     box-sizing: border-box;
+    border-top: 3px solid rgb(67, 67, 67);
+    border-left: 3px solid rgb(67, 67, 67);
+    border-right: 3px solid rgb(67, 67, 67);
 
 
 }

@@ -328,11 +328,20 @@ body {
     text-align: center;
     padding: 5px 20px;
     border: #000 1px solid;
+    line-height: 20px;
     border-radius: 50px;
     position: absolute;
     left: 40%;
     top: 80%
+
+
 };
+
+.main .dDay .dDayinput .dateInputdiv #addDate:hover {
+    color: #999;
+    box-shadow:200px 0 0 0 rgba(0,0,0,0.5) inset;
+
+}
 
 
 /* footer ================================== */

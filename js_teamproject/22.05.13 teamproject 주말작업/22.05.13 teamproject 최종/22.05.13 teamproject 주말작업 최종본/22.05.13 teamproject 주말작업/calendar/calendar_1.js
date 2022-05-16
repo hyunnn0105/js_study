@@ -53,7 +53,8 @@ function buildCalendar() {
 
     // * 달의 첫날 앞으로는 빈셀을 생성.
 
-    let $row = $calendarTable.insertRow(); // insertRow : 행을 추가
+    let $row = $calendarTable.insertRow(); 
+    // insertRow : 행을 추가
     $row.classList.add('addrow');
 
     // getDay() 는 요일을 출력하는 함수. // 0 = 일 ~ 6 = 토

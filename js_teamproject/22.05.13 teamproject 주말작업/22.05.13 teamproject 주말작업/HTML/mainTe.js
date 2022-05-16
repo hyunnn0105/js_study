@@ -129,9 +129,9 @@ function renderNewToDo(dateObj) {
 // 삭제 처리
 function removeDday($targetdiv) {
     //1. 화면처리 : 삭제버튼이 선택된 container태그를 d-day-container에서 제거
-    $dDayContainer.removeChild($targetdiv)
+    $dDayContainer.removeChild($targetdiv);
     //2. 데이터 처리: 배열에서 제거된 container에 매칭하는 객체를 삭제
-
+    
 
 }
 

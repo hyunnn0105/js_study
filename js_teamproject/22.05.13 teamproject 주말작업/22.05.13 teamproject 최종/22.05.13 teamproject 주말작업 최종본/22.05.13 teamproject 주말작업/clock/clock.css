@@ -1,16 +1,14 @@
 * {
     box-sizing: border-box;
 }
-/*
-.wrap {
-    width: 350px;
-    height: 350px;
-    background: #ea7612;
 
-}*/
+/* .wrap {
+    background:white;
+    height: 99%;
+} */
 
 .clock {
-    width: 280px;
+    width: 80%;
     height: 280px;
     top: 10px;
 
@@ -137,6 +135,7 @@
 /* 디지털시계 */
 .digital-clock {
     text-align: center;
-    font-size: 30px;
-    margin-top: 20px;
+    font-weight: 700;
+    font-size: 25px;
+    padding: 40px;
 }

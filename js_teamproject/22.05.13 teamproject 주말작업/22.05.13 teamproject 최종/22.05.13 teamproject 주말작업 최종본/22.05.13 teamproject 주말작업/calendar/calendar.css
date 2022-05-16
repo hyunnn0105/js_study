@@ -2,37 +2,46 @@
 #calendarWrapper {
     /* background: green; */
     display: flex;
+    height: 100%;
+    box-sizing: border-box;
+    /* background: #CAB7A1; */
 }
 
 /* 오늘의 요일과 날짜 */
 #showtoday{
-    width: 50%;    
-    /* background: yellow;      */
+    width: 45%;  
+    height: 100%;  
 }
 
 
 .day {
+    background: rgb(129, 17, 18);
     width: 100%;
     /* background: red; */
-    height: 40px;
+    height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+
+    color: #fff;
+    font-size: 25px;
     font-weight: 700;
-    margin-top: 20px;    
-    border-bottom: 2px solid black;
-    padding: 20px 0 50px;
+    /* margin-top: 20px;     */
+    /* border-bottom: 2px solid black; */
+    padding: 40px 0 50px;
     box-sizing: border-box;
+    border-top: 3px solid rgb(67, 67, 67);
+    border-left: 3px solid rgb(67, 67, 67);
+    border-right: 3px solid rgb(67, 67, 67);
 
 
 }
 
 .todate {
+    border: 3px solid rgb(67, 67, 67);
     width: 100%;
-    /* background: white; */
-    border: 4px;
-    height: 300px;
+    height: 80%;
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +55,11 @@
 #calendarBox {
     /* background: yellow; */
     margin: 0 auto;
-    width: 400px;
+    padding: 10px;
+    width: 65%;
+    height: 98%;
+    border-radius: 10px;
+    border: 2px solid rgb(0, 0, 0);
 }
 
 /* 연월 다음칸 이동 */
@@ -65,13 +78,18 @@
 }
 
 #calendarTitle {
-    font-size: 25px;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 #calendar{
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 700;
     /* background: orange; */
-    width: 100%;   
+    width: 96%;   
+    height: 98%;
+    margin: 0 auto;
+
     /* border: 1px solid; */
 }
 
@@ -80,6 +98,7 @@
 }
 
 #calendar td {
+
     /* border: 1px solid; */
 }
 #calendar .center {
@@ -96,19 +115,19 @@
 }
 /* 자바스크립트로 추가된 날짜 데이터의 css */
 .addrow td {
-    font-size: 20px;
+    font-size: 18px;
     /* background: white; */
-    padding: 15px 0;
+    padding: 10px 0;
 }
 
 /* 공휴일 처리 */
 
 .sunday {
-    color : red;
+    color : rgb(172, 56, 52);
 }
 
 .saturday {
-    color: blue;
+    color: #016699;
 }
 
 
