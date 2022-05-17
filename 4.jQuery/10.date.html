@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- RESET CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+<!-- jQuery cdn -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title></title>
+</head>
+<body>
+    <!-- 1. 속성 추가
+    - $(selector).data(key, value)
+    key는 string type의 변수로 말 그대로 데이터가 저장될 key 값이다.
+    value는 object type으로 javascript에서 지원하는 모든 type의 데이터를 저장할 수 있다.
+
+    2. 속성 가져오기
+    - $(selector).data(key)
+    key는 위에서 저장한 데이터를 가져오기 위한 key 값이다.
+    key를 생략하여 .data()로 사용도 가능하며, 결과는 해당 엘리먼트에 저장된 모든 데이터들이 JSON 형식으로 나온다.
+
+    3. 속성 삭제
+    - $(selector).removeData(key)
+    key는 string type으로 삭제할 데이터의 key값이다.  -->
+
+    <!-- <div>
+        The values stored were
+        <span></span>
+        and
+        <span></span>
+    </div> -->
+
+    <div data-role="page" data-last-value="43" data-hidden="true" data-options='{"name":"John"}'></div>
+
+
+    <script>
+
+        // $( "div" ).data( "test", { first: 16, last: "pizza!" } );
+        // $( "span" ).first().text( $( "div" ).data( "test" ).first );
+        // $( "span" ).last().text( $( "div" ).data( "test" ).last );
+    
+        $( "div" ).data( "role" ) === "page";
+        $( "div" ).data( "lastValue" ) === 43;
+        $( "div" ).data( "hidden" ) === true;
+        $( "div" ).data( "options" ).name === "John";
+        console.log('div.dataset');
+    
+    </script>
+
+    <!-- jQ 데이터 속성 얻는법? date() / 인터넷에서 찾고 예제 만들어보기? -->
+</body>
+</html>

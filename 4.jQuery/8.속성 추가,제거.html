@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- RESET CSS -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"> -->
+<!-- jQuery cdn -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title></title>
+</head>
+<body>
+
+    <input type="text" id="account" value="abc1234">
+    <p class="msg"></p>
+
+    <script>
+        $(() => {
+
+            //속성값 얻기
+            //const id = document.getElementById('account').getAttribute('id');
+            // attr = getarr
+            const id = $('#account').attr('id');
+            console.log(id);
+
+            //속성값 변경 - 2개:sett / 1개:gett
+            $('#account').attr('type', 'email');
+
+            //속성값 추가
+            $('#account').attr('title', '이메일 입력');
+
+            //속성값 제거
+            $('#account').removeAttr('title');
+
+            //
+            $('#account').keyup(e => {
+                
+                // value 속성 얻기
+                $('p').text($('#account').val());
+
+                //hteml() = innerHTML
+                //text() = textContent, innertext
+                //val() = value
+
+            });
+
+
+
+
+
+        });
+
+    </script>
+
+</body>
+</html>
