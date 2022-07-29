@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="reg-form">
+        # writer : <input type="text" name="writer">
+        <br>
+        # contnet : <input type="text" name="content">
+        <br>
+        <button id="reg-btn">댓글작성</button>
+    </div>
+    <ul id="replies"></ul>
+    
+
+    <!-- 288 -->
+    <script>
+
+            function makeReplyDOM(replyList) {
+                const $ul = document.getElementById('replies');
+            replyList.forEach(rep => {
+                const {replyWriter, replyText, replyNo} = rep;
+                const $li = document.createElement('li');
+
+                $li.dataset.rno = replyNo;
+
+                $li.textContent = `작성자: ${replyWriter}, 내용: ${replyText}`;
+                const $delBtn = document.createElement('button');
+                $delBtn.classList.add('del-btn');
+                $delBtn.textContent = '삭제';
+                
+                $li.appendChild($delBtn);
+                $ul.appendChild($li);
+            });
+
+            // 삭제버튼 이벤트
+            $ul.onclick = e => {
+                if (!e.target.matches('.del-btn')) return;
+
+                const rno = e.target.parentElement.dataset.rno;
+                fetch(url + '/' + rno, { method: 'DELETE' })
+                    .then(res => {
+                        if (res.status === 200) {
+                            return res.text();
+                        }
+                        return null;
+                    })
+                    .then(msg => {
+                        if (msg === 'del-success') {
+                            alert('삭제 성공!');
+                        } else {
+                            alert('삭제 실패!');
+                        }
+                    })
+                    .catch(err => alert('통신 실패!'))
+            };
+
+            }
+
+
+        /*
+        function makeReplyDOM(replyList) {
+            const $ul = document.getElementById('replies');
+            replyList.forEach(rep => {
+                const {replyWriter, replyTest} = rep;
+                const $li = document.createElement('li');
+                $li.textContent = `작성자: ${replyWriter}, 내용: ${replyText}`;
+                const $delBtn = document.createElement('button');
+                $delBtn.classList.add('del-btn');
+                $delBtn.textContent('삭제');
+
+                $li.appendChild($delBtn);
+                $ul.appendChild($li);
+            })
+        }
+        */
+
+        
+
+        const boardNo = 288;
+        const url = 'http://localhost:8185/api/v1/replies';
+
+        fetch( url + '?boardNo=' + boardNo)
+        .then(res => res.json())
+        .then(replyMap => {
+            makeReplyDOM(replyMap.replyList);
+            // console.log(replyMap.replyList[0].replyWriter);
+        });
+
+        // 댓글쓰기 비동기요청 클릭이벤트
+        document.getElementById('reg-btn').onclick = e => {
+            e.preventDefault();
+
+            // GET을 제외한 다른 요청 방식에는 요청초기화정보객체가 추가로 필요함
+            // const reqObj = {
+            //     method: 'POST', // 요청방식
+            //     Headers : {
+            //         'content-type' : 'application/json'
+            //     }, // 요청 header(설정?)에 포함할 정보
+            //     // 특수문자나 따음표 들어가면 ''따옴표 쳐주기
+            //     body : JSON.stringify({
+            //         replyWriter : document.querySelector('[name=writer]').value,
+            //         replyText : document.querySelector('[name=content]').value, 
+            //         boardNo : boardNo
+            //     }) // payload 정보 - 서버로 보낼 json data!! 
+
+            // }
+
+            const reqObj = {
+                method: 'POST', // 요청방식
+                headers: {
+                    'content-type' : 'application/json'
+                }, // 요청헤더 정보
+                body: JSON.stringify({
+                    replyWriter : document.querySelector('[name=writer]').value,
+                    replyText : document.querySelector('[name=content]').value,
+                    boardNo : boardNo
+                }) // payload정보 - 서버로 보낼 json데이터
+            };
+
+
+            //fetch(POST) - default = GET
+             // fetch요청 (POST)
+             fetch(url, reqObj)
+                .then(res => res.text())
+                .then(resultMsg => {
+                    console.log(resultMsg);
+                    if (resultMsg === 'success') {
+                        alert('댓글 등록 성공!');
+                    } else {
+                        alert('댓글 등록 실패!');
+                    }
+                });
+
+        }
+    </script>
+</body>
+</html>

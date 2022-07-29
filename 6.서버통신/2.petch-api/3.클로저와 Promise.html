@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function foo() {
+            // console.log('foo~~~');
+
+            function bar() {
+                console.log('bar~~~~!');
+                return 'smile~~';
+            }
+            // java에서는 없는 개념
+            // js는 함수 지향형이라 함수 리턴도 가능
+            return bar();
+            // resurn bar(); 바 함수자체 리턴 -> 함수 통째로 f f===bar
+        }
+
+        const f = foo();
+        const result = f();
+        console.log('result:', result);
+
+        func();
+
+
+    </script>
+
+
+</body>
+</html>
